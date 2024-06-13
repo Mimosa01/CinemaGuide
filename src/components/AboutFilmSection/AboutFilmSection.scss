@@ -1,0 +1,67 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.about-movie {
+  margin-bottom: 120px;
+
+  &__header {
+    @include clearMarginPadding;
+  }
+}
+
+.about-list {
+  @include clearStyleList;
+  width: 100%;
+  max-width: 500px;
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 24px;
+    max-width: 320px;
+    width: 100%;
+
+    &::before {
+      content: '';
+      order: 2;
+      margin: 0 8px;
+      flex-grow: 1;
+      border-bottom: 1px dashed $white;
+    }
+
+    &__value {
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      transform: translateX(100%);
+    }
+  }
+}
+
+@include small {
+  .about-list {
+    &__item {
+      flex-direction: column;
+
+      &::before {
+        content: none;
+      }
+
+      &__name {
+        font-size: 14px;
+        line-height: 24px;
+        opacity: 0.5;
+      }
+
+      &__value {
+        position: relative;
+        transform: none;
+      }
+    }
+  }
+}

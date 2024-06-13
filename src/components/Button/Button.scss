@@ -1,0 +1,80 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  @include clearDefaultFocus;
+}
+
+.btn {
+  padding: 16px 48px;
+  color: $white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 28px;
+  background-color: $background-secondary;
+  @include transition;
+  
+  &--color {
+    background-color: $btn-color;
+    @include transition;
+
+    &:hover,
+    &:focus {
+      background-color: $hover-btn-color;
+    }
+  }
+
+  &--icon {
+    display: flex;
+    padding: 16px 22px;
+    max-width: 68px;
+  }
+
+  &--outline {
+    position: relative;
+    display: flex;
+    color: $white;
+    font-size: 24px;
+    font-weight: 400;
+    background-color: transparent;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      height: 1.5px;
+      width: 0;
+      background-color: $hover-line;
+      @include transition;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+  }
+
+  &:not(.btn--color):hover,
+  &:not(.btn--color):focus {
+    color: $black;
+    background-color: $white;
+  }
+
+  &:not(.btn--color):hover path,
+  &:not(.btn--color):focus path{
+    stroke: $black;
+    fill: $black;
+  }
+}
+
+@include small {
+  .btn:not(.btn--icon) {
+    padding: 16px 40px;
+  }
+}

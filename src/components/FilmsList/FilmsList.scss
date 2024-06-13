@@ -1,0 +1,72 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.list-mb {
+  margin-bottom: 64px;
+}
+
+.film-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  @include clearStyleList;
+
+  &::after {
+    content: '';
+    flex: auto;
+  }
+
+  &__item {
+    width: calc((100% - (4 * 40px)) / 5);
+  }
+
+  &__mb {
+    margin-bottom: 64px;
+  }
+}
+
+@include extraLarge {
+  .film-list__item {
+    width: calc((100% - (3 * 40px)) / 4);
+  }
+}
+
+// @include large {
+//   .film-list__item {
+//     width: calc((100% - (2 * 40px)) / 3);
+//   }
+// }
+
+@include middle {
+  .film-list:not(.film-list--vertical) {
+    flex-wrap: nowrap;
+    width: calc((224px* 10) + (40px* 9));
+  }
+
+  .film-list__item {
+    width: 224px;
+  }
+
+  .film-list--vertical .film-list__item {
+    width: calc((100% - (1 * 40px)) / 2);
+  }
+}
+
+@include verySmall {
+  .film-list--vertical {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .film-list--vertical .film-list__item {
+    width: 100%;
+  }
+
+  .film-list {
+    &__mb {
+      margin-bottom: 40px;
+    }
+  }
+}

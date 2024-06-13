@@ -1,0 +1,28 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+
+.mobile-nav {
+  display: none;
+  column-gap: 22px;
+  align-items: flex-end;
+
+  &__link {
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:hover path {
+      fill: $hover-btn-color;
+    }
+  }
+}
+
+button.mobile-nav__link {
+  @include clearStyleBtn;
+  @include clearDefaultFocus;
+}
+
+@include middle {
+  .mobile-nav {
+    display: flex;
+  }
+}

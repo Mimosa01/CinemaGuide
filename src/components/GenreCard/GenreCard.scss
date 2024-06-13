@@ -1,0 +1,41 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.card-genre {
+  @include clearDefaultFocus;
+  @include transition;
+
+  &:hover .card-genre__container,
+  &:focus .card-genre__container {
+    outline: 1px solid $white;
+  }
+
+  &__container {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  &__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 0;
+    text-align: center;
+    background-color: $black;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+@include extraLarge {
+  .card-genre__body {
+    padding: 20px 0;
+  }
+}

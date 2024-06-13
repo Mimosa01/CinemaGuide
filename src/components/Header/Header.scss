@@ -1,0 +1,25 @@
+@import '../../scss/variable.scss';
+@import '../../scss/media.scss';
+
+.header {
+  position: absolute;
+  padding: 24px 0;
+  width: 100%;
+  background-color: $black;
+  background-color: rgba(0,0,0,0.5);;
+  z-index: 2;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@include middle {
+  .header {
+    position: relative;
+    padding: 19px 0;
+    background-color: rgba(0,0,0,1);
+  }
+}

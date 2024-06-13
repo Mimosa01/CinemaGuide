@@ -1,0 +1,35 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.top {
+  margin-bottom: 120px;
+
+  &__header {
+    @include clearMarginPadding;
+  }
+}
+
+@include middle {
+  .top {
+    margin-bottom: 0;
+
+    &__container {
+      margin: 0 -20px;
+    }
+
+    &__header {
+      padding: 0 20px 0 20px;
+      margin-bottom: 0;
+    }
+
+    &__list-container {
+      position: relative;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      padding: 60px 20px 50px 20px;
+      overflow-x: auto;
+    }
+  }
+}

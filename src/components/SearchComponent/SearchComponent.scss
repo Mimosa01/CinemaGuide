@@ -1,0 +1,174 @@
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+@import '../../scss/media.scss';
+
+.search {
+  position: relative;
+  margin-right: 80px;
+  max-width: 559px;
+  width: 100%;
+
+  &__input {
+    padding: 12px 16px 12px 52px;
+    width: 100%;
+    color: $white;
+    font-size: 18px;
+    border: 1px solid $background-secondary;
+    border-radius: 8px;
+    background-color: $background-secondary;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:hover,
+    &:focus {
+      border-color: $content-active;
+    }
+
+    &:hover ~ .search__icon path,
+    &:focus ~ .search__icon path {
+      fill: $content-active;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 13px;
+    left: 18px;
+
+    & path {
+      @include transition;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    @include clearDefaultFocus;
+    
+    & path {
+      fill: rgba(255,  255,  255, 0.5);
+      @include transition;
+    }
+
+    &:hover path {
+      fill: $hover-btn-color;
+    } 
+  }
+}
+
+.found {
+  @include clearStyleList;
+  position: absolute;
+  margin-top: 12px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: $background-secondary;
+
+  &__loader {
+    padding: 50px;
+  }
+
+  &__no-search {
+    display: inline-block;
+    margin: 10px 0;
+    color: $white;
+    font-size: 18px;
+  }
+
+  &__container {
+    display: flex;
+    gap: 16px;
+    padding: 20px 8px;
+    border-radius: 8px;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:hover,
+    &:focus {
+      background-color: $grey;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__img {
+    width: 40px;
+  }
+
+  &__row-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+
+    &__raiting {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      column-gap: 4px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 16px;
+
+      & svg {
+        width: 10px;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+@include extraLarge {
+  .search {
+    margin-right: 40px;
+  }
+}
+
+@include middle {
+  .search--mobile {
+    position: absolute;
+    top: 11px;
+    left: 20px;
+    max-width: 576px;
+  }
+}
+
+@include small {
+  .search--mobile {
+    position: absolute;
+    width: calc(100% - 40px);
+  }
+
+  .found {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+
+    &__container {
+      flex-direction: column;
+      width: 220px;
+    }
+
+    &__row-info {
+      flex-wrap: wrap;
+    }
+
+    &__img {
+      width: 158px;
+    }
+  }
+}

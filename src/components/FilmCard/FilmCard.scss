@@ -1,0 +1,62 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.card-film {
+  position: relative;
+  
+  &__link {
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:hover ~ .card-film__delete {
+      opacity: 1;
+    }
+  
+    &:hover .card-film__body,
+    &:focus .card-film__body {
+      outline: 1px solid $white;
+    }
+  }
+
+  &__body {
+    // position: relative;
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  &__delete {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    padding: 13px;
+    background-color: $white;
+    border-radius: 30px;
+    opacity: 0;
+    z-index: 20;
+    @include clearDefaultFocus;
+    @include transition;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    height: 336px;
+    border-radius: 16px;
+  }
+
+  &__raiting {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    padding: 8px 24px;
+    color: $btn-color;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: $white;
+    border-radius: 50px;
+  }
+}

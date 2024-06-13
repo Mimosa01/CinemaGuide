@@ -1,0 +1,29 @@
+@import '../../scss/variable.scss';
+
+.form-field {
+  position: relative;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 24px;
+  }
+
+  &--error {
+    & input {
+      border-color: $error;
+    }
+
+    & svg {
+      opacity: 1;
+    }
+
+    & svg path {
+      fill: $error;
+    }
+  }
+
+  &__error-message {
+    color: $error;
+    font-size: 12px;
+  }
+}

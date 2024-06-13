@@ -1,0 +1,15 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+
+.logo {
+  margin-right: 80px;
+  min-width: 136px;
+  width: 25%;
+  @include clearDefaultFocus;
+}
+
+@include middle {
+  .logo {
+    margin-right: auto;
+  }
+}
