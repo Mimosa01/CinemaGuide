@@ -1,0 +1,95 @@
+@import './variable.scss';
+@import './media.scss';
+@import './mixins.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 375px;
+  // min-height: 100vh;
+  font-family: $defaultFonts;
+  font-size: 24px;
+  font-weight: 400;
+  color: $white;
+  background-color: $background-black;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-shadow {
+  -webkit-box-shadow: 0 0 80px 1px rgba(255,  255,  255, 0.33);
+  -moz-box-shadow: 0 0 80px 1px rgba(255,  255,  255, 0.33);
+  box-shadow: 0 0 80px 1px rgba(255,  255,  255, 0.33);
+}
+
+.body-wrapper {
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 64px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.gold {
+  background-color: $gold;
+}
+
+.green {
+  background-color: $success;
+}
+
+.red {
+  background-color: $red;
+}
+
+.grey {
+  background-color: $grey;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.oops {
+  @include clearMarginPadding;
+  margin-top: 24px;
+  color: $background-secondary;
+  text-align: center;
+}
+
+@include middle {
+  .card-shadow {
+    -webkit-box-shadow: 0 0 50px 1px rgba(255,  255,  255, 0.33);
+    -moz-box-shadow: 0 0 50px 1px rgba(255,  255,  255, 0.33);
+    box-shadow: 0 0 50px 1px rgba(255,  255,  255, 0.33);
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+}
+
+@include small {
+  .section-header {
+    font-size: 24px;
+  }
+
+  .oops {
+    margin-top: 0;
+  }
+}

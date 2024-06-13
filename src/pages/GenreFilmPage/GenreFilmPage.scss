@@ -1,0 +1,61 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.genre-films {
+  padding: 160px 0 160px 0;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include clearMarginPadding;
+
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    & path {
+      fill: $white;
+    }
+  }
+
+  &__list {
+    margin-bottom: 64px;
+  }
+
+  &__btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__link {
+    @include clearDefaultFocus;
+  }
+}
+
+@include middle {
+  .genre-films {
+    padding: 24px 0 40px 0;
+
+    &__list .film-list__item {
+      width: calc((100% - 80px) / 3);
+    }
+  }
+}
+
+@include small {
+  .genre-films {
+    &__header {
+      gap: 8px;
+    }
+  }
+}
+
+@include verySmall {
+  .genre-films__btn {
+    width: 100%;
+  }
+}

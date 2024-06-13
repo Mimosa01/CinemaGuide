@@ -1,0 +1,69 @@
+@import '../../scss/media.scss';
+@import '../../scss/mixins.scss';
+@import '../../scss/variable.scss';
+
+.account {
+  padding-top: 160px;
+  padding-bottom: 170px;
+
+  &__header {
+    @include clearMarginPadding;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+
+  &__btn svg {
+    margin-right: 10px;
+  }
+}
+
+@include large {
+  .account {
+    padding-top: 140px;
+  }
+}
+
+@include middle {
+  .account {
+    padding-top: 24px;
+    padding-bottom: 0;
+
+    &__container {
+      margin: 0 -20px;
+    }
+
+    &__header {
+      padding: 0 20px;
+    }
+
+    &__nav {
+      gap: 24px;
+      padding-bottom: 0;
+
+      &--padding {
+        padding: 0 20px;
+      }
+
+      & ~ .film-list {
+        top: -60px;
+      }
+    }
+  }
+}
+
+@include small {
+  .account {
+    &__nav {
+      display: flex;
+    }
+
+    &__btn svg {
+      margin-right: 8px;
+      width: 20px;
+    }
+  }
+}
