@@ -1,30 +1,68 @@
-# React + TypeScript + Vite
+# 🎬 CinemaGuide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CinemaGuide** — это веб-приложение для просмотра и поиска фильмов, разработанное с использованием React, TypeScript и Vite. Проект предоставляет удобный интерфейс для пользователей, позволяя им находить информацию о фильмах, просматривать трейлеры и получать рекомендации.
 
-Currently, two official plugins are available:
+## 🚀 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **React** — библиотека для создания пользовательских интерфейсов.
+* **TypeScript** — язык программирования, расширяющий JavaScript с поддержкой статической типизации.
+* **Vite** — современный инструмент сборки, обеспечивающий быструю разработку и горячую перезагрузку.
+* **ESLint** — инструмент для анализа кода, обеспечивающий соблюдение стандартов качества.
+* **Vite Plugins**:
 
-## Expanding the ESLint configuration
+  * `@vitejs/plugin-react` — плагин для поддержки React с использованием Babel.
+  * `@vitejs/plugin-react-swc` — плагин для поддержки React с использованием SWC.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📁 Структура проекта
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+CinemaGuide/
+├── src/                # Исходный код приложения
+├── public/             # Статические файлы
+├── index.html          # Главная HTML-страница
+├── package.json        # Зависимости и скрипты
+├── tsconfig.json       # Конфигурация TypeScript
+├── vite.config.ts      # Конфигурация Vite
+└── README.md           # Документация проекта
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## ⚙️ Установка и запуск
+
+1. **Клонируйте репозиторий:**
+
+   ```bash
+   git clone https://github.com/Mimosa01/CinemaGuide.git
+   cd CinemaGuide
+   ```
+
+2. **Установите зависимости:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Запустите приложение в режиме разработки:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Соберите приложение для продакшена:**
+
+   ```bash
+   npm run build
+   ```
+
+## 📦 Скрипты
+
+* `npm run dev` — запуск приложения в режиме разработки с горячей перезагрузкой.
+* `npm run build` — сборка приложения для продакшена.
+* `npm run preview` — предварительный просмотр собранного приложения.
+
+## 🛠️ Конфигурация ESLint
+
+Для обеспечения качества кода рекомендуется настроить ESLint с поддержкой TypeScript. В файле `vite.config.ts` уже настроены соответствующие плагины. Дополнительно можно расширить конфигурацию ESLint для более строгой проверки кода.
+
+## 📄 Лицензия
+
+Этот проект распространяется под лицензией [MIT](LICENSE).
